@@ -28,7 +28,7 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const Comments = ({videoId}) => {
+const Comments = ({ videoId }) => {
 
   const { currentUser } = useSelector((state) => state.user);
 
@@ -39,7 +39,7 @@ const Comments = ({videoId}) => {
       try {
         const res = await axios.get(`/comments/${videoId}`);
         setComments(res.data);
-      } catch (err) {}
+      } catch (err) { }
     };
     fetchComments();
   }, [videoId]);
@@ -49,11 +49,11 @@ const Comments = ({videoId}) => {
   return (
     <Container>
       <NewComment>
-        <Avatar src={currentUser.img} />
+        <Avatar src={currentUser && currentUser.img} />
         <Input placeholder="Add a comment..." />
       </NewComment>
-      {comments.map(comment=>(
-        <Comment key={comment._id} comment={comment}/>
+      {comments.map(comment => (
+        <Comment key={comment._id} comment={comment} />
       ))}
     </Container>
   );

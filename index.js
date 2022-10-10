@@ -58,7 +58,6 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 5000;
 
-
 // Heroku Deployment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -66,14 +65,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-
-
-
-
-
-
-
 
 // listen on port 
 app.listen(port, () => {
