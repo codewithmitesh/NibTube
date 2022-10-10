@@ -1,4 +1,4 @@
-# YouTube Clone Using HTML And CSS Only
+# YouTube Clone Using MERN Stack
 
 - Live Site URL: [Live site URL](https://nibtube.herokuapp.com/)
 
