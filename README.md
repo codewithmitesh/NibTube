@@ -2,6 +2,9 @@
 
 - Live Site URL: [Live site URL](https://nibtube.herokuapp.com/)
 
+- Video Demo : [Video Demo](#)
+- Code Walkthrough : [Code Walkthrough](#)
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -17,9 +20,11 @@
 
 ## Overview
 
-### Screenshot
+## My process
 
-<!-- ![Screenshot](/screenshots/screenshot.png?raw=true "View Of Page") -->
+- I used my knowledge of the MERN i have to build the Clone app .
+- Learned and Used **React Redux** for the firstime
+- **All Links are in [Useful resources](#useful-resources).**
 
 ### What I learned
 
@@ -33,7 +38,7 @@
 ### Built with
 
 - Complete MERN Full Stack
-- MongoDB Express React Node
+- MongoDb Express React Node
 
 ## 🖥️ Tech Stack
 
@@ -54,7 +59,7 @@
 
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
-### 🚀 Features
+### 🚀 Features🔥
 
 - User Login and Signup
 - Video Upload
@@ -62,18 +67,42 @@
 - Subscribe to Channel
 - Light and Dark Mode
 
-### Currently Under Development
+### 😇 Upcoming Features🔥
 
 - Fixing Minor Bugs
 - Recommendation Section
 - Comments Section
--
 
-## Author
+## Sneak Peek 🙈
 
-- LinkedIn - [Mitesh Tank](https://www.linkedin.com/in/mitesh-tank/)
-- Twitter - [Mitesh Tank](https://twitter.com/codewithmitesh)
+![home](This is Home Screen)
 
-© 2022 Mitesh Tank
+<table>
+  <tr>
+    <td><img src="#" alt="Video Page" /></td>
+    <td><img src="#" alt="Search Result" /></td>
+  </tr>
+  <tr>
+    <td><img src="#" alt="Login page" /></td>
+    <td><img src="#" alt="Upload Video" /></td>
+  </tr>
+</table>
+
+## Useful resources
+
+- [Complete NodeJs Developer Bootcamp 2022](https://www.example.com) - This is the Udemy Course that i followed to learn NodeJs💛.
+- [Thapa Technical](https://www.example.com) - This is the Youtube Channel that i followed to learn ReactJs💙.
+- [Redux in One Video](https://www.example.com) - This is the Youtube Video that i followed to learn Redux💜.
+- Also Some Online Blogs and Articles.
+
+## 📬 Contact
+
+If you want to contact me, you can reach me through below handles.
+
+[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mitesh-tank/)
+
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/codewithmitesh)
+
+© 2022 Mitesh Tank ❤
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
