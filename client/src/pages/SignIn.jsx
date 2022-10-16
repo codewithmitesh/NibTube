@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axiosInstance } from "..//config";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -80,7 +80,7 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signin", { name, password });
+      const res = await axiosInstance.post("/auth/signin", { name, password });
       dispatch(loginSuccess(res.data));
       navigate("/")
     } catch (err) {
@@ -90,7 +90,7 @@ const SignIn = () => {
   const handleSignup = async () => {
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signup", { name, email, password });
+      const res = await axiosInstance.post("/auth/signup", { name, email, password });
       dispatch(loginSuccess(res.data));
       navigate("/")
     } catch (err) {
@@ -102,7 +102,7 @@ const SignIn = () => {
     dispatch(loginStart());
     signInWithPopup(auth, provider)
       .then((result) => {
-        axios
+        axiosInstance
           .post("/auth/google", {
             name: result.user.displayName,
             email: result.user.email,

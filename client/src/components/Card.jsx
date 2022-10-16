@@ -2,7 +2,7 @@
  * Component of video cards 
  */
 
-import axios from "axios";
+import { axiosInstance } from "..//config";
 import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -66,7 +66,7 @@ const Card = ({ type, video }) => {
   useEffect(() => {
     const fetchChannel = async () => {
       // console.log('Fetching channel deatiales hahahah');
-      const res = await axios.get(`/users/find/${video.userId}`);
+      const res = await axiosInstance.get(`/users/find/${video.userId}`);
       setChannel(res.data);
     };
     fetchChannel();

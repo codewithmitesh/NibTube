@@ -1,4 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
+import { axiosInstance } from "..//config";
+
 import React from "react";
 import styled from "styled-components";
 import NibTube from "../img/logo.png";
@@ -106,12 +108,11 @@ const Menu = ({ darkMode, setDarkMode }) => {
     dispatch(logout())
     try {
       console.log("logout called")
-      const res = await axios.post("/auth/logout");
+      const res = await axiosInstance.post("/auth/logout");
       res.status === 200 && navigate("/");
     }
     catch (err) {
       dispatch(loginFailure());
-
     }
   }
   return (
@@ -215,5 +216,4 @@ const Menu = ({ darkMode, setDarkMode }) => {
     </Container >
   );
 };
-
 export default Menu;

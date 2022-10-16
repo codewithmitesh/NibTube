@@ -28,13 +28,10 @@ const connect = () => {
     });
 };
 app.use(morgan('tiny'));
-
 //middlewares
 app.use(cookieParser())
 app.use(express.json());
-
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 /**
  * What ever front end anf backend server talkes is routes and whatever server talks with database is /api/
@@ -55,18 +52,39 @@ app.use((err, req, res, next) => {
     message,
   });
 });
+// app.use(cors());
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', "http://localhost:5000");
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-const port = process.env.PORT || 5000;
+  // Access - Control - Allow - Credentials: true
+  // Access - Control - Allow - Headers: X - PINGOTHER, Content - Type
+  // Access - Control - Allow - Methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+  // Access - Control - Allow - Origin: http://your-origin-url.com
 
-// Heroku Deployment
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
+  next();
+});
+
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true,            //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
 }
+app.use(cors(corsOptions));
+
+// // Heroku Deployment
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//   });
+// }
 
 // listen on port 
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   //connecting to DB and port
   connect();

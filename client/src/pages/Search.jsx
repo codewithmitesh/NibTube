@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axiosInstance } from "..//config";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -16,15 +16,15 @@ const Search = () => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/videos/search${query}`);
+      const res = await axiosInstance.get(`/videos/search${query}`);
       setVideos(res.data);
     };
     fetchVideos();
   }, [query]);
 
   return <Container>
-    {videos.map(video=>(
-      <Card key={video._id} video={video}/>
+    {videos.map(video => (
+      <Card key={video._id} video={video} />
     ))}
   </Container>;
 };
