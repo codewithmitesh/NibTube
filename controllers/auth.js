@@ -38,10 +38,10 @@ export const signin = async (req, res, next) => {
 
     const token = jwt.sign({ id: user._id }, process.env.JWT);
     const { password, ...others } = user._doc;
-
+    // to get out of cors error try to remove the httpOnly thing 
     res
       .cookie("access_token", token, {
-        httpOnly: true,
+        httpOnly: false,
       })
       .status(200)
       .json(others);
@@ -74,7 +74,7 @@ export const googleAuth = async (req, res, next) => {
       const token = await jwt.sign({ id: user._id }, process.env.JWT);
       res
         .cookie("access_token", token, {
-          httpOnly: true,
+          httpOnly: false,
         })
         .status(200)
         .json(user._doc);
@@ -90,7 +90,7 @@ export const googleAuth = async (req, res, next) => {
       const token = await jwt.sign({ id: savedUser._id }, process.env.JWT);
       res
         .cookie("access_token", token, {
-          httpOnly: true,
+          httpOnly: false,
         })
         .status(200)
         .json(savedUser._doc);

@@ -16,6 +16,11 @@ const app = express();
 //config .env
 dotenv.config();
 
+
+
+
+
+
 // connect mongodb from here
 const connect = () => {
   mongoose
@@ -32,6 +37,31 @@ app.use(morgan('tiny'));
 app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+/**
+ * To send cookies from axios and to handle the cors error simply we need to Do the the cors and Header setting as below 
+ * ! important :- Order of functions matter in index.js server side
+ * cors and header ko uper rakho and important settings ko uper hi rakho
+ */
+// here put credentials:true and origin:process.env.CLIENT_URL for cors error
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credentials: true,            //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+}
+app.use(cors(corsOptions));
+
+// to handle the crossorigin ERROR  
+app.use(function (req, res, next) {
+
+  res.header('Access-Control-Allow-Credentials', true)
+  res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+  // res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header('Content-Type', 'application/json;charset=UTF-8')
+  next();
+});
 
 /**
  * What ever front end anf backend server talkes is routes and whatever server talks with database is /api/
@@ -52,28 +82,9 @@ app.use((err, req, res, next) => {
     message,
   });
 });
-// app.use(cors());
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', "http://localhost:5000");
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-  // Access - Control - Allow - Credentials: true
-  // Access - Control - Allow - Headers: X - PINGOTHER, Content - Type
-  // Access - Control - Allow - Methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
-  // Access - Control - Allow - Origin: http://your-origin-url.com
-
-  next();
-});
 
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true,            //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-}
-app.use(cors(corsOptions));
+
 
 // // Heroku Deployment
 if (process.env.NODE_ENV === "production") {
