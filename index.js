@@ -40,22 +40,22 @@ app.use(express.urlencoded({ extended: true }));
  */
 // here put credentials:true and origin:process.env.CLIENT_URL for cors error
 const corsOptions = {
-  // origin: process.env.CLIENT_URL,
+  origin: process.env.CLIENT_URL,
   credentials: true,            //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 }
 app.use(cors(corsOptions));
 
 // // to handle the crossorigin ERROR  
-// app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
-//   res.header('Access-Control-Allow-Credentials', true)
-//   res.header('Access-Control-Allow-Origin', "http://localhost:3000");
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//   res.header('Content-Type', 'application/json;charset=UTF-8')
-//   next();
-// });
+  res.header('Access-Control-Allow-Credentials', true)
+  res.header('Access-Control-Allow-Origin', "https://nibtube.netlify.app");
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header('Content-Type', 'application/json;charset=UTF-8')
+  next();
+});
 
 
 
