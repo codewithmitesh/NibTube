@@ -99,17 +99,25 @@ app.use((err, req, res, next) => {
 
 // server deployment
 app.get("/", (req, res) => {
-  res.json({ message: "Server Deployed Successfully", success: true });
+  try {
+
+    res.json({ message: "Server Deployed Successfully", success: true });
+  } catch (err) {
+    console.log(err.message);
+  }
 })
 
 
-
-
+// for Only one deployment add this in script
+// "client-install": "cd client && npm install ",
+// "client-build": "cd client && npm run build",
+// "heroku-postbuild": "npm run client-install && npm run client-build"
 
 
 
 // listen on port 
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
   //connecting to DB and port
   connect();
