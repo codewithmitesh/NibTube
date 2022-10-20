@@ -47,6 +47,7 @@
 ![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
 ![react-router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)&nbsp;
 ![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)&nbsp;
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)&nbsp;
 
 **Backend:**
 
@@ -54,10 +55,12 @@
 ![expressjs](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)&nbsp;
 ![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
 ![jwt](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)&nbsp;
+![mongoose](https://img.shields.io/badge/Mongoose-47A248?style=for-the-badge&logo=Mongoose&logoColor=white)&nbsp;
 
 **Deployed On:**
 
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 ### 🚀 Features🔥
 
@@ -75,16 +78,16 @@
 
 ## Sneak Peek 🙈
 
-![home](This is Home Screen)
+<img src="./screenshots/Home.png" alt="HOME" />
 
 <table>
   <tr>
-    <td><img src="#" alt="Video Page" /></td>
-    <td><img src="#" alt="Search Result" /></td>
+    <td><img src="./screenshots/Video.png" alt="Video Page" /></td>
+    <td><img src="./screenshots/Search.png" alt="Search Result" /></td>
   </tr>
   <tr>
-    <td><img src="#" alt="Login page" /></td>
-    <td><img src="#" alt="Upload Video" /></td>
+    <td><img src="./screenshots/SignIn.png" alt="Login page" /></td>
+    <td><img src="./screenshots/Upload.png" alt="Upload Video" /></td>
   </tr>
 </table>
 
