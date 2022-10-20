@@ -16,11 +16,6 @@ const app = express();
 //config .env
 dotenv.config();
 
-
-
-
-
-
 // connect mongodb from here
 const connect = () => {
   mongoose
@@ -45,23 +40,25 @@ app.use(express.urlencoded({ extended: true }));
  */
 // here put credentials:true and origin:process.env.CLIENT_URL for cors error
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  // origin: process.env.CLIENT_URL,
   credentials: true,            //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 }
 app.use(cors(corsOptions));
 
-// to handle the crossorigin ERROR  
-app.use(function (req, res, next) {
+// // to handle the crossorigin ERROR  
+// app.use(function (req, res, next) {
 
-  res.header('Access-Control-Allow-Credentials', true)
-  res.header('Access-Control-Allow-Origin', process.env.CLIENT_URL);
-  // res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.header('Content-Type', 'application/json;charset=UTF-8')
-  next();
-});
+//   res.header('Access-Control-Allow-Credentials', true)
+//   res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//   res.header('Content-Type', 'application/json;charset=UTF-8')
+//   next();
+// });
+
+
+
 
 /**
  * What ever front end anf backend server talkes is routes and whatever server talks with database is /api/
@@ -71,6 +68,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
+
 
 //error handler for all [this is middleware to handle errors]
 app.use((err, req, res, next) => {
@@ -83,9 +81,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-
-
-
 // // Heroku Deployment
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
@@ -94,12 +89,23 @@ app.use((err, req, res, next) => {
 //   });
 // }
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build', 'index.html')); // relative path
-  })
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/client/build")));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, '/client/build', 'index.html')); // relative path
+//   })
+// }
+
+
+// server deployment
+app.get("/", (req, res) => {
+  res.json({ message: "Server Deployed Successfully", success: true });
+})
+
+
+
+
+
 
 
 // listen on port 
