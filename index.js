@@ -4,6 +4,9 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from 'cors';
+import corsOptions from './config/corsOptions.js';
+import credentials from './middleware/credentials.js';
+
 // importing routes
 import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/videos.js";
@@ -13,6 +16,16 @@ import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
+
+
+// Handle options credentials check - before CORS!
+// and fetch cookies credentials requirement
+app.use(credentials);
+app.use(cors(corsOptions));
+
+// app.use(cors());
+app.options('*', cors(corsOptions));
+
 //config .env
 dotenv.config();
 
@@ -33,32 +46,34 @@ app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
+
+
+
 /**
+ * !! OLD hai ye
  * To send cookies from axios and to handle the cors error simply we need to Do the the cors and Header setting as below 
  * ! important :- Order of functions matter in index.js server side
  * cors and header ko uper rakho and important settings ko uper hi rakho
  */
 // here put credentials:true and origin:process.env.CLIENT_URL for cors error
-const corsOptions = {
-  origin: process.env.CLIENT_URL,
-  credentials: true,            //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-}
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: process.env.CLIENT_URL,
+//   credentials: true,            //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// }
+// app.use(cors(corsOptions));
 
-// // to handle the crossorigin ERROR  
-app.use(function (req, res, next) {
-
-  res.header('Access-Control-Allow-Credentials', true)
-  res.header('Access-Control-Allow-Origin', "https://nibtube.netlify.app");
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.header('Content-Type', 'application/json;charset=UTF-8')
-  next();
-});
-
-
-
+// // // to handle the crossorigin ERROR  
+// app.use(function (req, res, next) {
+//   res.header('Access-Control-Allow-Credentials', true)
+//   res.header('Access-Control-Allow-Origin', "https://nibtube.netlify.app");
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X - PINGOTHER');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//   res.header('Content-Type', 'application/json;charset=UTF-8')
+//   next();
+// });
 
 /**
  * What ever front end anf backend server talkes is routes and whatever server talks with database is /api/

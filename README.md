@@ -3,7 +3,7 @@
 - Live Site URL: [Live site URL](https://nibtube.herokuapp.com/)
 
 - Video Demo : [Video Demo](#)
-- Code Walkthrough : [Code Walkthrough](#)
+- Code Walkthrough : [Code Walkthrough]()
 
 ## Table of contents
 
