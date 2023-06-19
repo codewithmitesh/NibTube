@@ -1,5 +1,5 @@
 # YouTube Clone Using MERN Stack
-
+</hr>
 - Live Site URL: [Live site URL](https://nibtube.herokuapp.com/)
 
 - Video Demo : [Video Demo](#)
@@ -7,19 +7,22 @@
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+- [YouTube Clone Using MERN Stack](#youtube-clone-using-mern-stack)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+  - [My process](#my-process)
+    - [What I learned](#what-i-learned)
+    - [Built with](#built-with)
+  - [🖥️ Tech Stack](#️-tech-stack)
+    - [🚀 Features🔥](#-features)
+    - [😇 Upcoming Features🔥](#-upcoming-features)
+  - [Sneak Peek 🙈](#sneak-peek-)
   - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+  - [📬 Contact](#-contact)
 
 ## Overview
 
+- Welcome to my YouTube Clone application! Built using the powerful MERN Stack, this platform emulates the functionality and experience of the original Youtube. With a sleek user interface and seamless navigation, users can easily search, view, and upload videos. Leveraging the MERN (MongoDB, Express.js, React, and Node.js) technologies, this app offers real-time updates, user authentication, and personalized recommendations, making it a dynamic and engaging platform for sharing and exploring videos.
 ## My process
 
 - I used my knowledge of the MERN i have to build the Clone app .
