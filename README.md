@@ -1,7 +1,7 @@
 # YouTube Clone Using MERN Stack
 </hr>
-- Live Site URL: [Live site URL](https://nibtube.herokuapp.com/)
 
+- Live Site URL: [Live site URL](https://nibtube.netlify.app/)
 - Video Demo : [Video Demo](#)
 - Code Walkthrough : [Code Walkthrough]()
 
@@ -81,7 +81,9 @@
 
 ## Sneak Peek 🙈
 
-<img src="./screenshots/Home.png" alt="HOME" />
+<img src="./screenshots/Home1.png" alt="HOME" />
+<img src="./screenshots/Home3.png" alt="HOME" />
+<img src="./screenshots/Home2.png" alt="HOME" />
 
 <table>
   <tr>
@@ -109,6 +111,6 @@ If you want to contact me, you can reach me through below handles.
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/codewithmitesh)
 
-© 2022 Mitesh Tank ❤
+© 2023 Mitesh Tank ❤
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
